@@ -9,7 +9,6 @@ public class RespostaListaExercicio {
 	 * Não se faz necessário implementar dentro do escopo do método.
 	 */
 	public static void main(String[] args) {
-		
 	}
 	
 	/**
@@ -21,9 +20,10 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularImc(float peso, float altura) 
 	{
-		return 0f;
-	}
-	
+		float resultado = peso / (altura * altura);
+		System.out.println("O resultado do IMC é " + resultado);
+		return resultado;
+   }
 	/**
 	 * Método deve calcular a área do trapézio independente da unidade de medida.
 	 * Como resultado, o método deve retornar a área calculada.
@@ -34,7 +34,9 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) 
 	{	
-		return 0f;
+		float areaTrapezio = ((baseMaior + baseMenor) * altura) / 2;
+		System.out.println("A área do trapézio é " + areaTrapezio);
+		return areaTrapezio ;
 	}
 	
 	/**
@@ -47,7 +49,13 @@ public class RespostaListaExercicio {
 	 */
 	public static int maiorEntreDoisInteiros(int a, int b) 
 	{
-		return 0;
+		int maiorValor;
+		if (a > b) {
+	       return maiorValor = a;
+	    } else {
+	        maiorValor = b;
+	    }
+		return maiorValor;
 	}
 	
 	/**
@@ -59,7 +67,7 @@ public class RespostaListaExercicio {
 	 */
 	public static boolean verificarParImpar(int numero) 
 	{
-		return false;		
+		return numero % 2 == 0; 	
 	}
 	
 	/**
@@ -69,7 +77,12 @@ public class RespostaListaExercicio {
 	 * @return media
 	 */
 	public static float calcularMediaNotas(float[] notas) {
-		return 0f;
+		float soma = 0f; 
+		for (float nota : notas) {
+	        soma += nota;
+	    }
+		float media = soma / notas.length;
+	    return media;
 	}
 	
 	/**
@@ -80,7 +93,13 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirArrayInverso(int[] array)
 	{
-		System.out.print("");
+		for (int i = array.length - 1; i >= 0; i--) {
+			System.out.print(array[i]); 
+			if (i > 0) {
+				System.out.print(", "); 
+			}
+		}
+		System.out.println();
 	}
 	
 	/**
@@ -91,7 +110,20 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPrimos(int[] array) 
 	{
-		System.out.print("");
+		for (int numero : array) {
+		        if (numero > 1) {
+		            boolean numPrimo = true;
+		            for (int i = 2; i <= Math.sqrt(numero); i++) {
+		                if (numero % i == 0) {
+		                    numPrimo = false;
+		                    break;
+		                }
+		            }
+		            if (numPrimo) {
+		                System.out.print(numero + " ");
+		            }
+		        }
+		    }
 	}
 	
 	
@@ -103,7 +135,12 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosImpares(int[] array) 
 	{
-		System.out.print("");
+		for (int i = 0; i < array.length; i++) {
+		       
+	        if (array[i] % 2 != 0) {
+	            System.out.print(array[i] + " "); 
+	        }
+	    }
 	}
 	
 	
@@ -115,7 +152,12 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPares(int[] array) 
 	{
-		System.out.print("");
+		for (int i = 0; i < array.length; i++) {
+	       
+	        if (array[i] % 2 == 0) {
+	            System.out.print(array[i] + " "); 
+	        }
+	    }
 	}
 	
 	
@@ -127,7 +169,23 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirMaiorMenorElemento(int[] array) 
 	{
-		System.out.print("");
+		{
+			if (array.length == 0) {
+				   
+			   }
+			   int maior = array[0]; 
+			   int menor = array[0]; 
+			  
+			   for (int num : array) {
+				   if (num > maior) {
+					   maior = num; 
+				   }
+				   if (num < menor) {
+					   menor = num; 
+				   }
+			   }
+			   System.out.print(maior + " " + menor + " ");
+	   }
 	}
 	
 	/**
@@ -138,7 +196,18 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularMediaAritmetica(int[] array) 
 	{
-		return 0f;
+		if (array.length == 0) {
+		}
+		 int soma = 0; 
+		 
+		 for (int num : array) {
+			 soma += num;
+		 }
+		 float media = (float) soma / array.length;
+		 
+		 System.out.println("A média é:" + media);
+	 
+	 return media;
+ }
 	}
 	
-}
